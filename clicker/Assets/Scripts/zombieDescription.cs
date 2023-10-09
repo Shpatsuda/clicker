@@ -26,21 +26,26 @@ public class zombieDescription : MonoBehaviour
             return;
         }
 
+
+    }
+
+    private void FixedUpdate()
+    {
         // Move the character towards the target.
         Vector2 moveDirection = (W1zardo.position - transform.position).normalized;
         float TargetDistance = Vector2.Distance(transform.position, W1zardo.position);
 
         if (TargetDistance > StopDistance)
         {
-           // transform.Translate(Vector2.down * Speed * Time.deltaTime, Space.Self);
-           
-           Zumbis.velocity = transform.TransformDirection(Vector2.down) * Speed * Time.deltaTime * 100;
-           
+            // transform.Translate(Vector2.down * Speed * Time.deltaTime, Space.Self);
+
+            Zumbis.velocity = transform.TransformDirection(Vector2.down) * Speed * Time.deltaTime * 100;
+
         }
-        
+
         if (TargetDistance <= StopDistance)
         {
-            Zumbis.velocity = new Vector2(0,0);
+            Zumbis.velocity = new Vector2(0, 0);
         }
 
         //Look at target.        
